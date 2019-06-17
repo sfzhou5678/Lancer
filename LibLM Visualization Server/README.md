@@ -8,7 +8,7 @@ One can choose a library (e.g. the "javax.swing" shown in Figure 1) and select t
 
 Every node on the graph stands for one library. The edge between nodes represent the correlation between libraries.
 
-![](/images/swing.png)
+![](images/swing.png)
 
 
 
