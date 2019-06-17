@@ -1,0 +1,34 @@
+<idea-plugin>
+    <id>com.zsf.LAMPPlugin</id>
+    <name>LAMP</name>
+    <vendor email="sfzhou567@sjtu.edu.cn" url="https://github.com/sfzhou5678">sfzhou567</vendor>
+
+    <description>
+        hello
+    </description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="Lancer" secondary="true" anchor="right" factoryClass="LancerToolWindowFactory"/>
+        <projectService serviceInterface="service.MainToolWindowService"
+                        serviceImplementation="service.MainToolWindowService"/>
+        <applicationConfigurable groupId="tools" displayName="LancerSettings"
+                                 id="LAMPConfigurable" instance="config.LancerConfigurable"/>
+        <applicationService serviceInterface="config.SettingConfig" serviceImplementation="config.SettingConfig"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="com.zsf.InvokeLAMPAction" class="action.InvokeLancerAction" text="InvokeLAMPAction">
+            <add-to-group group-id="CodeMenu" anchor="before" relative-to-action="OverrideMethods"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift alt A"/>
+        </action>
+        <action id="com.zsf.ImplicitlyInvokeLAMPAction" class="action.ImplicitlyInvokeLancerAction"
+                text="ImplicitlyInvokeLAMPAction" description="ImplicitlyInvokeLAMPAction"/>
+    </actions>
+</idea-plugin>
