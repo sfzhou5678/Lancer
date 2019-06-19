@@ -226,6 +226,14 @@ public class JavaDetailLexer extends JavaLexer implements Lexer, DetailLexer {
             }
             i++;
         }
+
+//        for (MethodInfo methodInfo : methodInfoList) {
+//            System.out.println(methodInfo);
+//            System.out.println();
+//        }
+//        Gson gson = new Gson();
+//        String methodListJson = gson.toJson(methodInfoList);
+//        return methodListJson;
         return methodInfoList;
     }
 
