@@ -50,4 +50,4 @@ A break-down of what happened:
 
 - `server `: use the 'server' mode.
 - `--lib-container`: the path of the libContainer obtained after training a LSLM. 
-- `the remaining parameters have been introduced above, so we will not go into details.
+- the remaining parameters have been introduced above, so we will not go into details.
