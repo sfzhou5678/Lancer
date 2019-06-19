@@ -350,7 +350,12 @@ public class CLI {
         String host = "localhost";
         int port = 41235;
         Map<String, Object> extraInfos = new HashMap<>();
-        Model model = getModel();
+        Model model = null;
+        try {
+            model = getModel();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         extraInfos.put("model", model);
 
         String libContainerSavePath = getArg(LIB_CONTAINER);

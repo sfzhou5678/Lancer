@@ -114,8 +114,12 @@ public class LibLMPredFollowTokensHandler implements HttpHandler {
 
             codeContextTokens = codeContextTokens.stream()
                     .filter(s -> !ParserUtil.LM_STOP_WORDS_SET.contains(s) && !s.isEmpty()).collect(Collectors.toList());
-            List<String> predTokens = libLMModelRunner.libModelGreedyPredictionWithBasicModel(libMixModel, libNames, weights,
-                    model, codeContextTokens, extendLen);
+            List<String> predTokens;
+            if (model == null) {
+                predTokens = libLMModelRunner.libModelGreedyPrediction(libMixModel, libNames, weights, codeContextTokens, extendLen);
+            } else {
+                predTokens = libLMModelRunner.libModelGreedyPredictionWithBasicModel(libMixModel, libNames, weights, model, codeContextTokens, extendLen);
+            }
 
             String response = String.join(" ", predTokens);
             OutputStream responseBody = httpExchange.getResponseBody();
