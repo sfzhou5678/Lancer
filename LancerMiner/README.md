@@ -4,7 +4,7 @@ This repository contains the main server that interacts with **LancerPlugin**. T
 
 
 
-##Main Server
+## Main Server
 
 The main server accepts requests from **LancerPlugin** and return the recommended code samples. The related code "server/es/remote_server.py" shows the overview workflow of our main server:
 
