@@ -4,15 +4,17 @@ This repository contains all the code described in paper "Lancer: Your Code Tell
 
 Lancer is  a novel, context-aware, scalable, and code-to-code recommendation tool. Lancer is able to automatically analyze the intention of the incomplete code and recommend relevant and reusable code samples in real-time.
 
-The following demo video shows what Lancer can do for you:
+The following [demo video]( https://youtu.be/tO9nhqZY35g) shows what Lancer can do for you:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tO9nhqZY35g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![img](home.png)](https://youtu.be/tO9nhqZY35g)
 
-
+ 
 
 ## Code sructure
 
 We implement Lancer as an IntelliJ IDEA plugin. To support this plugin, we implement a back-end server which consists of several components. These components are written in different programming language. They can run on several clusters and interact with each other via HTTP requests.
+
+![](workflow.png)
 
 #### 1. [GithubSpider](https://github.com/sfzhou5678/Lancer/tree/master/GithubSpider)
 
